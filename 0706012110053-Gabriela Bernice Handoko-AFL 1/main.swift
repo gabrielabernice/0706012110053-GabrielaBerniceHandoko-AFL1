@@ -26,28 +26,30 @@ var harga:Int = 0
 var payment:Int = 0
 var cartCafe:[String] = []
 var inputCart:String = ""
-var money:Int = 0
+var money:String = ""
 var change:Int = 0
 var re:String = ""
 
-// jumlahbeli belom semua di set gabisa <= 0, trs masi gabisa kalo string
-// di payment kalo gaada input & string, malah keluar cant be zero
+// di payment kalo string, masih keluar cant be zero
 
 func mainScreen(){
     print("""
           Welcome to UC-Walk Cafeteria 👨🏻‍🍳👩🏻‍🍳
           Please choose cafeteria:
           
-          [1] Tuku-Tuku
-          [2] Gotri
-          [3] Madam Lie
-          [4] Kopte
-          [5] Xiang Jia
+          """)
+    
+    for (index, cafe) in cafeteria.enumerated() {
+        print("[\(index + 1)] \(cafe)")
+    }
+    
+    print("""
           -
           [S]hopping cart
           [Q]uit
           Your cafeteria choice?
           """, terminator: " ")
+    
     mainChoice = readLine()!.lowercased()
     
     print()
@@ -83,12 +85,14 @@ func tukuTuku(){
     print("""
           Hi, welcome back to Tuku-Tuku!
           What would you like to order?
-
-          [1] Tahu isi
-          [2] Nasi kuning
-          [3] Nasi campur
-          [4] Air mineral
-          [5] Popmie goreng
+          
+          """)
+    
+    for (index, menu) in menuTuku.enumerated() {
+        print("[\(index + 1)] \(menu)")
+    }
+    
+    print("""
           -
           [B]ack to Main Menu
           Your menu choice?
@@ -106,7 +110,7 @@ func tukuTuku(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         
-        if((Int(jumlahBeli) ?? 0) <= 0){
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
             print()
             tukuTuku()
         }
@@ -129,16 +133,23 @@ func tukuTuku(){
               How many \(menuTuku[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuTuku[1]) x\(jumlahBeli)")
-        cartCafe.append("Tuku-Tuku")
-        
-        harga = hargaTuku[1] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        tukuTuku()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            tukuTuku()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuTuku[1]) x\(jumlahBeli)")
+            cartCafe.append("Tuku-Tuku")
+            
+            harga = hargaTuku[1] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            tukuTuku()
+        }
         
     case "3" :
         print("""
@@ -146,16 +157,23 @@ func tukuTuku(){
               How many \(menuTuku[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuTuku[2]) x\(jumlahBeli)")
-        cartCafe.append("Tuku-Tuku")
-        
-        harga = hargaTuku[2] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        tukuTuku()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            tukuTuku()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuTuku[2]) x\(jumlahBeli)")
+            cartCafe.append("Tuku-Tuku")
+            
+            harga = hargaTuku[2] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            tukuTuku()
+        }
         
     case "4" :
         print("""
@@ -163,16 +181,23 @@ func tukuTuku(){
               How many \(menuTuku[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuTuku[3]) x\(jumlahBeli)")
-        cartCafe.append("Tuku-Tuku")
-        
-        harga = hargaTuku[3] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        tukuTuku()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            tukuTuku()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuTuku[3]) x\(jumlahBeli)")
+            cartCafe.append("Tuku-Tuku")
+            
+            harga = hargaTuku[3] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            tukuTuku()
+        }
     
     case "5" :
         print("""
@@ -180,16 +205,23 @@ func tukuTuku(){
               How many \(menuTuku[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuTuku[4]) x\(jumlahBeli)")
-        cartCafe.append("Tuku-Tuku")
-        
-        harga = hargaTuku[4] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        tukuTuku()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            tukuTuku()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuTuku[4]) x\(jumlahBeli)")
+            cartCafe.append("Tuku-Tuku")
+            
+            harga = hargaTuku[4] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            tukuTuku()
+        }
         
     case "b" :
         mainScreen()
@@ -203,12 +235,14 @@ func gotri(){
     print("""
           Hi, welcome back to Gotri!
           What would you like to order?
-
-          [1] Beef rendang
-          [2] Fried rice
-          [3] Gotri signature
-          [4] Mala chicken
-          [5] Es lychee
+          
+          """)
+    
+    for (index, menu) in menuGotri.enumerated() {
+        print("[\(index + 1)] \(menu)")
+    }
+    
+    print("""
           -
           [B]ack to Main Menu
           Your menu choice?
@@ -225,16 +259,23 @@ func gotri(){
               How many \(menuGotri[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuGotri[0]) x\(jumlahBeli)")
-        cartCafe.append("Gotri")
-        
-        harga = hargaGotri[0] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        gotri()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            gotri()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuGotri[0]) x\(jumlahBeli)")
+            cartCafe.append("Gotri")
+            
+            harga = hargaGotri[0] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            gotri()
+        }
         
     case "2" :
         print("""
@@ -242,16 +283,23 @@ func gotri(){
               How many \(menuGotri[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuGotri[1]) x\(jumlahBeli)")
-        cartCafe.append("Gotri")
-        
-        harga = hargaGotri[1] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        gotri()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            gotri()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuGotri[1]) x\(jumlahBeli)")
+            cartCafe.append("Gotri")
+            
+            harga = hargaGotri[1] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            gotri()
+        }
         
     case "3" :
         print("""
@@ -259,16 +307,23 @@ func gotri(){
               How many \(menuGotri[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuGotri[2]) x\(jumlahBeli)")
-        cartCafe.append("Gotri")
-        
-        harga = hargaGotri[2] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        gotri()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            gotri()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuGotri[2]) x\(jumlahBeli)")
+            cartCafe.append("Gotri")
+            
+            harga = hargaGotri[2] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            gotri()
+        }
         
     case "4" :
         print("""
@@ -276,16 +331,23 @@ func gotri(){
               How many \(menuGotri[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuGotri[3]) x\(jumlahBeli)")
-        cartCafe.append("Gotri")
-        
-        harga = hargaGotri[3] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        gotri()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            gotri()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuGotri[3]) x\(jumlahBeli)")
+            cartCafe.append("Gotri")
+            
+            harga = hargaGotri[3] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            gotri()
+        }
     
     case "5" :
         print("""
@@ -293,16 +355,23 @@ func gotri(){
               How many \(menuGotri[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuGotri[4]) x\(jumlahBeli)")
-        cartCafe.append("Gotri")
-        
-        harga = hargaGotri[4] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        gotri()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            gotri()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuGotri[4]) x\(jumlahBeli)")
+            cartCafe.append("Gotri")
+            
+            harga = hargaGotri[4] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            gotri()
+        }
         
     case "b" :
         mainScreen()
@@ -316,12 +385,13 @@ func madamLie(){
     print("""
           Hi, welcome back to Madam Lie!
           What would you like to order?
-
-          [1] Nasi Ayam Geprek
-          [2] Nasi Ayam Bakar
-          [3] Nasi Goreng
-          [4] Es Teh Manis
-          [5] Mie Goreng
+          """)
+    
+    for (index, menu) in menuMadam.enumerated() {
+        print("[\(index + 1)] \(menu)")
+    }
+    
+    print("""
           -
           [B]ack to Main Menu
           Your menu choice?
@@ -338,16 +408,23 @@ func madamLie(){
               How many \(menuMadam[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuMadam[0]) x\(jumlahBeli)")
-        cartCafe.append("Madam Lie")
-        
-        harga = hargaMadam[0] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        madamLie()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            madamLie()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuMadam[0]) x\(jumlahBeli)")
+            cartCafe.append("Madam Lie")
+            
+            harga = hargaMadam[0] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            madamLie()
+        }
         
     case "2" :
         print("""
@@ -355,16 +432,23 @@ func madamLie(){
               How many \(menuMadam[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuMadam[1]) x\(jumlahBeli)")
-        cartCafe.append("Madam Lie")
-        
-        harga = hargaMadam[1] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        madamLie()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            madamLie()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuMadam[1]) x\(jumlahBeli)")
+            cartCafe.append("Madam Lie")
+            
+            harga = hargaMadam[1] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            madamLie()
+        }
         
     case "3" :
         print("""
@@ -372,16 +456,23 @@ func madamLie(){
               How many \(menuMadam[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuMadam[2]) x\(jumlahBeli)")
-        cartCafe.append("Madam Lie")
-        
-        harga = hargaMadam[2] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        madamLie()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            madamLie()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuMadam[2]) x\(jumlahBeli)")
+            cartCafe.append("Madam Lie")
+            
+            harga = hargaMadam[2] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            madamLie()
+        }
         
     case "4" :
         print("""
@@ -389,16 +480,23 @@ func madamLie(){
               How many \(menuMadam[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuMadam[3]) x\(jumlahBeli)")
-        cartCafe.append("Madam Lie")
-        
-        harga = hargaMadam[3] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        madamLie()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            madamLie()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuMadam[3]) x\(jumlahBeli)")
+            cartCafe.append("Madam Lie")
+            
+            harga = hargaMadam[3] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            madamLie()
+        }
     
     case "5" :
         print("""
@@ -406,16 +504,23 @@ func madamLie(){
               How many \(menuMadam[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuMadam[4]) x\(jumlahBeli)")
-        cartCafe.append("Madam Lie")
-        
-        harga = hargaMadam[4] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        madamLie()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            madamLie()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuMadam[4]) x\(jumlahBeli)")
+            cartCafe.append("Madam Lie")
+            
+            harga = hargaMadam[4] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            madamLie()
+        }
         
     case "b" :
         mainScreen()
@@ -429,12 +534,13 @@ func kopte(){
     print("""
           Hi, welcome back to Kopte!
           What would you like to order?
-
-          [1] Kopi tarik kopte
-          [2] Teh tarik cincau
-          [3] Teh kundur
-          [4] Milo dinosaur
-          [5] Kaya butter toast
+          """)
+    
+    for (index, menu) in menuKopte.enumerated() {
+        print("[\(index + 1)] \(menu)")
+    }
+    
+    print("""
           -
           [B]ack to Main Menu
           Your menu choice?
@@ -451,16 +557,23 @@ func kopte(){
               How many \(menuKopte[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuKopte[0]) x\(jumlahBeli)")
-        cartCafe.append("Kopte")
-        
-        harga = hargaKopte[0] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        kopte()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            kopte()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuKopte[0]) x\(jumlahBeli)")
+            cartCafe.append("Kopte")
+            
+            harga = hargaKopte[0] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            kopte()
+        }
         
     case "2" :
         print("""
@@ -468,16 +581,23 @@ func kopte(){
               How many \(menuKopte[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuKopte[1]) x\(jumlahBeli)")
-        cartCafe.append("Kopte")
-        
-        harga = hargaKopte[1] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        kopte()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            kopte()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuKopte[1]) x\(jumlahBeli)")
+            cartCafe.append("Kopte")
+            
+            harga = hargaKopte[1] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            kopte()
+        }
         
     case "3" :
         print("""
@@ -485,16 +605,23 @@ func kopte(){
               How many \(menuKopte[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuKopte[2]) x\(jumlahBeli)")
-        cartCafe.append("Kopte")
-        
-        harga = hargaKopte[2] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        kopte()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            kopte()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuKopte[2]) x\(jumlahBeli)")
+            cartCafe.append("Kopte")
+            
+            harga = hargaKopte[2] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            kopte()
+        }
         
     case "4" :
         print("""
@@ -502,16 +629,23 @@ func kopte(){
               How many \(menuKopte[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuKopte[3]) x\(jumlahBeli)")
-        cartCafe.append("Kopte")
-        
-        harga = hargaKopte[3] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        kopte()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            kopte()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuKopte[3]) x\(jumlahBeli)")
+            cartCafe.append("Kopte")
+            
+            harga = hargaKopte[3] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            kopte()
+        }
     
     case "5" :
         print("""
@@ -519,16 +653,23 @@ func kopte(){
               How many \(menuKopte[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuKopte[4]) x\(jumlahBeli)")
-        cartCafe.append("Kopte")
-        
-        harga = hargaKopte[4] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        kopte()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            kopte()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuKopte[4]) x\(jumlahBeli)")
+            cartCafe.append("Kopte")
+            
+            harga = hargaKopte[4] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            kopte()
+        }
         
     case "b" :
         mainScreen()
@@ -542,12 +683,13 @@ func xiangJia(){
     print("""
           Hi, welcome back to Xiang Jia!
           What would you like to order?
-
-          [1] Mie kosong selatpanjang
-          [2] Nasi ayam hainan
-          [3] Mie ayam kobe
-          [4] Kopi O
-          [5] Teh tarik
+          """)
+    
+    for (index, menu) in menuXJ.enumerated() {
+        print("[\(index + 1)] \(menu)")
+    }
+    
+    print("""
           -
           [B]ack to Main Menu
           Your menu choice?
@@ -564,16 +706,23 @@ func xiangJia(){
               How many \(menuXJ[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuXJ[0]) x\(jumlahBeli)")
-        cartCafe.append("Xiang Jia")
-        
-        harga = hargaXJ[0] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        xiangJia()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            xiangJia()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuXJ[0]) x\(jumlahBeli)")
+            cartCafe.append("Xiang Jia")
+            
+            harga = hargaXJ[0] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            xiangJia()
+        }
         
     case "2" :
         print("""
@@ -581,16 +730,23 @@ func xiangJia(){
               How many \(menuXJ[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuXJ[1]) x\(jumlahBeli)")
-        cartCafe.append("Xiang Jia")
-        
-        harga = hargaXJ[1] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        xiangJia()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            xiangJia()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuXJ[1]) x\(jumlahBeli)")
+            cartCafe.append("Xiang Jia")
+            
+            harga = hargaXJ[1] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            xiangJia()
+        }
         
     case "3" :
         print("""
@@ -598,16 +754,23 @@ func xiangJia(){
               How many \(menuXJ[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuXJ[2]) x\(jumlahBeli)")
-        cartCafe.append("Xiang Jia")
-        
-        harga = hargaXJ[2] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        xiangJia()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            xiangJia()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuXJ[2]) x\(jumlahBeli)")
+            cartCafe.append("Xiang Jia")
+            
+            harga = hargaXJ[2] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            xiangJia()
+        }
         
     case "4" :
         print("""
@@ -615,16 +778,23 @@ func xiangJia(){
               How many \(menuXJ[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuXJ[3]) x\(jumlahBeli)")
-        cartCafe.append("Xiang Jia")
-        
-        harga = hargaXJ[3] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        xiangJia()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            xiangJia()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuXJ[3]) x\(jumlahBeli)")
+            cartCafe.append("Xiang Jia")
+            
+            harga = hargaXJ[3] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            xiangJia()
+        }
     
     case "5" :
         print("""
@@ -632,16 +802,23 @@ func xiangJia(){
               How many \(menuXJ[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
-        print("Thankyou for ordering.\n")
         
-        cart.append("\(menuXJ[4]) x\(jumlahBeli)")
-        cartCafe.append("Xiang Jia")
-        
-        harga = hargaXJ[4] * (Int(jumlahBeli) ?? 0)
-        
-        payment += harga
-        
-        xiangJia()
+        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+            print()
+            xiangJia()
+        }
+        else{
+            print("Thankyou for ordering.\n")
+            
+            cart.append("\(menuXJ[4]) x\(jumlahBeli)")
+            cartCafe.append("Xiang Jia")
+            
+            harga = hargaXJ[4] * (Int(jumlahBeli) ?? 0)
+            
+            payment += harga
+            
+            xiangJia()
+        }
         
     case "b" :
         mainScreen()
@@ -695,29 +872,35 @@ func checkoutScreen(){
           Your total order : \(payment.formatted())
           Enter the amount of your money :
           """, terminator: " ")
-    money = Int(readLine()!) ?? 0
+    money = readLine()!
     
     print()
     
-    if(money == 0){
+    if(money == ""){
+        print("Please enter your payment.\n")
+        checkoutScreen()
+    }
+    else if(Int(money) ?? 0 == 0){
         print("Payment can't be zero.\n")
         checkoutScreen()
     }
-    else if(money < 0){
+    else if(Int(money) ?? 0 < 0){
         print("Please enter a valid amount.\n")
         checkoutScreen()
     }
-    else if(money > 0){
-        if(money < payment){
+    else if(Int(money) ?? 0 > 0){
+        if(Int(money) ?? 0 < payment){
             checkoutScreen()
         }
-        else if(money >= payment){
+        else if(Int(money) ?? 0 >= payment){
             print("""
               Your total order : \(payment.formatted())
-              You pay : \(money.formatted())
+              You pay : \((Int(money) ?? 0).formatted())
               """)
             
-            change = money - payment
+            change = (Int(money) ?? 0) - payment
+            
+            cart = []
             
             print("""
               Change : \(change.formatted())
