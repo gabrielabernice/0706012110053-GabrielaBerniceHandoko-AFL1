@@ -30,8 +30,6 @@ var money:String = ""
 var change:Int = 0
 var re:String = ""
 
-// di payment kalo string, masih keluar cant be zero
-
 func mainScreen(){
     print("""
           Welcome to UC-Walk Cafeteria 👨🏻‍🍳👩🏻‍🍳
@@ -57,7 +55,7 @@ func mainScreen(){
     switch mainChoice{
     case "1" :
         tukuTuku()
-    
+        
     case "2" :
         gotri()
         
@@ -198,7 +196,7 @@ func tukuTuku(){
             
             tukuTuku()
         }
-    
+        
     case "5" :
         print("""
               \(menuTuku[4]) @ \(hargaTuku[4].formatted())
@@ -225,7 +223,7 @@ func tukuTuku(){
         
     case "b" :
         mainScreen()
-    
+        
     default :
         tukuTuku()
     }
@@ -348,7 +346,7 @@ func gotri(){
             
             gotri()
         }
-    
+        
     case "5" :
         print("""
               \(menuGotri[4]) @ \(hargaGotri[4].formatted())
@@ -375,7 +373,7 @@ func gotri(){
         
     case "b" :
         mainScreen()
-    
+        
     default :
         gotri()
     }
@@ -497,7 +495,7 @@ func madamLie(){
             
             madamLie()
         }
-    
+        
     case "5" :
         print("""
               \(menuMadam[4]) @ \(hargaMadam[4].formatted())
@@ -524,7 +522,7 @@ func madamLie(){
         
     case "b" :
         mainScreen()
-    
+        
     default :
         madamLie()
     }
@@ -646,7 +644,7 @@ func kopte(){
             
             kopte()
         }
-    
+        
     case "5" :
         print("""
               \(menuKopte[4]) @ \(hargaKopte[4].formatted())
@@ -673,7 +671,7 @@ func kopte(){
         
     case "b" :
         mainScreen()
-    
+        
     default :
         kopte()
     }
@@ -795,7 +793,7 @@ func xiangJia(){
             
             xiangJia()
         }
-    
+        
     case "5" :
         print("""
               \(menuXJ[4]) @ \(hargaXJ[4].formatted())
@@ -822,7 +820,7 @@ func xiangJia(){
         
     case "b" :
         mainScreen()
-    
+        
     default :
         kopte()
     }
@@ -845,7 +843,7 @@ func cartScreen(){
             print("- \(cart[index])")
         }
         print("""
-
+              
               Press [B] to go back
               Press [P] to pay / checkout
               Your choice?
@@ -880,53 +878,55 @@ func checkoutScreen(){
         print("Please enter your payment.\n")
         checkoutScreen()
     }
-    else if(Int(money) ?? 0 == 0){
-        print("Payment can't be zero.\n")
-        checkoutScreen()
-    }
-    else if(Int(money) ?? 0 < 0){
-        print("Please enter a valid amount.\n")
-        checkoutScreen()
-    }
-    else if(Int(money) ?? 0 > 0){
-        if(Int(money) ?? 0 < payment){
-            checkoutScreen()
-        }
-        else if(Int(money) ?? 0 >= payment){
-            print("""
-              Your total order : \(payment.formatted())
-              You pay : \((Int(money) ?? 0).formatted())
-              """)
-            
-            change = (Int(money) ?? 0) - payment
-            
-            cart = []
-            
-            print("""
-              Change : \(change.formatted())
-              
-              Enjoy your meals!
-              
-              Press [return] to go back to main screen :
-              """, terminator: " ")
-            
-            re = readLine()!.lowercased()
-            
-            print()
-            
-            if(re == "return"){
-                mainScreen()
-            }
-            else{
+    else {
+        if let mon = Int(money) {
+            if (mon == 0){
+                print("Payment can't be zero.\n")
                 checkoutScreen()
             }
-        }
-        else{
+            else if (mon < 0) {
+                print("Please enter a valid amount.\n")
+                checkoutScreen()
+            } else if (mon > 0) {
+                if(mon < payment){
+                    checkoutScreen()
+                }
+                else if(mon >= payment){
+                    print("""
+                              Your total order : \(payment.formatted())
+                              You pay : \(mon.formatted())
+                              """)
+                    
+                    change = mon - payment
+                    
+                    cart = []
+                    cartCafe = []
+                    payment = 0
+                    
+                    print("""
+                              Change : \(change.formatted())
+                              
+                              Enjoy your meals!
+                              
+                              Press [return] to go back to main screen :
+                              """, terminator: " ")
+                    
+                    re = readLine()!.lowercased()
+                    
+                    print()
+                    
+                    if(re == ""){
+                        mainScreen()
+                    }
+                    else{
+                        checkoutScreen()
+                    }
+                }
+            }
+        } else {
+            print("Please enter a valid amount.\n")
             checkoutScreen()
         }
-    }
-    else{
-        print("Please enter your payment.")
     }
 }
 
