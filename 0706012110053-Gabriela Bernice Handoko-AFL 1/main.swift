@@ -7,28 +7,27 @@
 
 import Foundation
 
-var cafeteria = ["Tuku-Tuku", "Gotri", "Madam Lie", "Kopte", "Gisoe Coffee"]
+var cafeteria = ["Tuku-Tuku", "Gotri", "Madam Lie", "Kopte", "Xiang Jia"]
 var menuTuku = ["Tahu Isi", "Nasi Kuning", "Nasi Campur", "Air Mineral", "Popmie Goreng"]
 var hargaTuku = [5000, 15000, 20000, 3000, 7000]
 var menuGotri = ["Beef Rendang", "Fried Rice", "Gotri Signature", "Mala Chicken", "Es Lychee"]
 var hargaGotri = [30000, 37500, 20000, 25000, 15000]
 var menuMadam = ["Nasi Ayam Geprek", "Nasi Ayam Bakar", "Nasi Goreng", "Es Teh Manis", "Mie Goreng"]
 var hargaMadam = [20000, 25000, 30000, 5000, 25000]
-var menuKopte = ["Kopi Tarik Kopte", "Teh Tarik Cincau", "Teh Kundur", "Milo Dinosaur", "Toast Kaya Butter"]
+var menuKopte = ["Kopi Tarik Kopte", "Es Cincau", "Teh Kundur", "Milo Dinosaur", "Toast Kaya Butter"]
 var hargaKopte = [15000, 17000, 14000, 16000, 18000]
 var menuXJ = ["Mie Kosong Selatpanjang", "Nasi Ayam Hainan", "Mie Ayam Kobe", "Kopi O", "Teh Tarik"]
 var hargaXJ = [25000, 30000, 25000, 12000, 16000]
 var mainChoice:String = ""
 var cafeChoice:String = ""
 var jumlahBeli:String = ""
-var cart:[String] = []
 var harga:Int = 0
 var payment:Int = 0
-var cartCafe:[String] = []
 var inputCart:String = ""
 var money:String = ""
 var change:Int = 0
 var re:String = ""
+var cart:[(String, String, Int)] = []
 
 func mainScreen(){
     print("""
@@ -107,16 +106,32 @@ func tukuTuku(){
               How many \(menuTuku[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    tukuTuku()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             tukuTuku()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuTuku[0]) x\(jumlahBeli)")
-            cartCafe.append("Tuku-Tuku")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuTuku[0])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[0], menuTuku[0], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaTuku[0] * (Int(jumlahBeli) ?? 0)
             
@@ -131,16 +146,32 @@ func tukuTuku(){
               How many \(menuTuku[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    tukuTuku()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             tukuTuku()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuTuku[1]) x\(jumlahBeli)")
-            cartCafe.append("Tuku-Tuku")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuTuku[1])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[0], menuTuku[1], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaTuku[1] * (Int(jumlahBeli) ?? 0)
             
@@ -155,16 +186,32 @@ func tukuTuku(){
               How many \(menuTuku[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    tukuTuku()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             tukuTuku()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuTuku[2]) x\(jumlahBeli)")
-            cartCafe.append("Tuku-Tuku")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuTuku[2])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[0], menuTuku[2], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaTuku[2] * (Int(jumlahBeli) ?? 0)
             
@@ -179,16 +226,32 @@ func tukuTuku(){
               How many \(menuTuku[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    tukuTuku()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             tukuTuku()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuTuku[3]) x\(jumlahBeli)")
-            cartCafe.append("Tuku-Tuku")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuTuku[3])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[0], menuTuku[3], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaTuku[3] * (Int(jumlahBeli) ?? 0)
             
@@ -203,16 +266,32 @@ func tukuTuku(){
               How many \(menuTuku[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    tukuTuku()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             tukuTuku()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuTuku[4]) x\(jumlahBeli)")
-            cartCafe.append("Tuku-Tuku")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuTuku[4])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[0], menuTuku[4], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaTuku[4] * (Int(jumlahBeli) ?? 0)
             
@@ -257,16 +336,32 @@ func gotri(){
               How many \(menuGotri[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    gotri()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             gotri()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuGotri[0]) x\(jumlahBeli)")
-            cartCafe.append("Gotri")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuGotri[0])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[1], menuGotri[0], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaGotri[0] * (Int(jumlahBeli) ?? 0)
             
@@ -281,16 +376,32 @@ func gotri(){
               How many \(menuGotri[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    gotri()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             gotri()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuGotri[1]) x\(jumlahBeli)")
-            cartCafe.append("Gotri")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuGotri[1])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[1], menuGotri[1], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaGotri[1] * (Int(jumlahBeli) ?? 0)
             
@@ -305,16 +416,32 @@ func gotri(){
               How many \(menuGotri[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    gotri()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             gotri()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuGotri[2]) x\(jumlahBeli)")
-            cartCafe.append("Gotri")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuGotri[2])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[1], menuGotri[2], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaGotri[2] * (Int(jumlahBeli) ?? 0)
             
@@ -329,16 +456,32 @@ func gotri(){
               How many \(menuGotri[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    gotri()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             gotri()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuGotri[3]) x\(jumlahBeli)")
-            cartCafe.append("Gotri")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuGotri[3])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[1], menuGotri[3], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaGotri[3] * (Int(jumlahBeli) ?? 0)
             
@@ -353,16 +496,32 @@ func gotri(){
               How many \(menuGotri[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    gotri()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             gotri()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuGotri[4]) x\(jumlahBeli)")
-            cartCafe.append("Gotri")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuGotri[4])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[1], menuGotri[4], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaGotri[4] * (Int(jumlahBeli) ?? 0)
             
@@ -406,16 +565,32 @@ func madamLie(){
               How many \(menuMadam[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    madamLie()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             madamLie()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuMadam[0]) x\(jumlahBeli)")
-            cartCafe.append("Madam Lie")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuMadam[0])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[2], menuMadam[0], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaMadam[0] * (Int(jumlahBeli) ?? 0)
             
@@ -430,16 +605,32 @@ func madamLie(){
               How many \(menuMadam[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    madamLie()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             madamLie()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuMadam[1]) x\(jumlahBeli)")
-            cartCafe.append("Madam Lie")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuMadam[1])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[2], menuMadam[1], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaMadam[1] * (Int(jumlahBeli) ?? 0)
             
@@ -454,16 +645,32 @@ func madamLie(){
               How many \(menuMadam[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    madamLie()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             madamLie()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuMadam[2]) x\(jumlahBeli)")
-            cartCafe.append("Madam Lie")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuMadam[2])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[2], menuMadam[2], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaMadam[2] * (Int(jumlahBeli) ?? 0)
             
@@ -478,16 +685,32 @@ func madamLie(){
               How many \(menuMadam[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    madamLie()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             madamLie()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuMadam[3]) x\(jumlahBeli)")
-            cartCafe.append("Madam Lie")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuMadam[3])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[2], menuMadam[3], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaMadam[3] * (Int(jumlahBeli) ?? 0)
             
@@ -502,16 +725,32 @@ func madamLie(){
               How many \(menuMadam[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    madamLie()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             madamLie()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuMadam[4]) x\(jumlahBeli)")
-            cartCafe.append("Madam Lie")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuMadam[4])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[2], menuMadam[4], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaMadam[4] * (Int(jumlahBeli) ?? 0)
             
@@ -555,16 +794,32 @@ func kopte(){
               How many \(menuKopte[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    kopte()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             kopte()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuKopte[0]) x\(jumlahBeli)")
-            cartCafe.append("Kopte")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuKopte[0])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[3], menuKopte[0], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaKopte[0] * (Int(jumlahBeli) ?? 0)
             
@@ -579,16 +834,32 @@ func kopte(){
               How many \(menuKopte[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    kopte()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             kopte()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuKopte[1]) x\(jumlahBeli)")
-            cartCafe.append("Kopte")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuKopte[1])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[3], menuKopte[1], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaKopte[1] * (Int(jumlahBeli) ?? 0)
             
@@ -603,16 +874,32 @@ func kopte(){
               How many \(menuKopte[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    kopte()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             kopte()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuKopte[2]) x\(jumlahBeli)")
-            cartCafe.append("Kopte")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuKopte[2])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[3], menuKopte[2], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaKopte[2] * (Int(jumlahBeli) ?? 0)
             
@@ -627,16 +914,32 @@ func kopte(){
               How many \(menuKopte[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    kopte()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             kopte()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuKopte[3]) x\(jumlahBeli)")
-            cartCafe.append("Kopte")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuKopte[3])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[3], menuKopte[3], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaKopte[3] * (Int(jumlahBeli) ?? 0)
             
@@ -651,16 +954,32 @@ func kopte(){
               How many \(menuKopte[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    kopte()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             kopte()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuKopte[4]) x\(jumlahBeli)")
-            cartCafe.append("Kopte")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuKopte[4])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[3], menuKopte[4], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaKopte[4] * (Int(jumlahBeli) ?? 0)
             
@@ -704,16 +1023,32 @@ func xiangJia(){
               How many \(menuXJ[0]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    xiangJia()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             xiangJia()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuXJ[0]) x\(jumlahBeli)")
-            cartCafe.append("Xiang Jia")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuXJ[0])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[4], menuXJ[0], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaXJ[0] * (Int(jumlahBeli) ?? 0)
             
@@ -728,16 +1063,32 @@ func xiangJia(){
               How many \(menuXJ[1]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    xiangJia()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             xiangJia()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuXJ[1]) x\(jumlahBeli)")
-            cartCafe.append("Xiang Jia")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuXJ[1])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[4], menuXJ[1], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaXJ[1] * (Int(jumlahBeli) ?? 0)
             
@@ -752,16 +1103,32 @@ func xiangJia(){
               How many \(menuXJ[2]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    xiangJia()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             xiangJia()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuXJ[2]) x\(jumlahBeli)")
-            cartCafe.append("Xiang Jia")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuXJ[2])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[4], menuXJ[2], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaXJ[2] * (Int(jumlahBeli) ?? 0)
             
@@ -776,16 +1143,32 @@ func xiangJia(){
               How many \(menuXJ[3]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    xiangJia()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             xiangJia()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuXJ[3]) x\(jumlahBeli)")
-            cartCafe.append("Xiang Jia")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuXJ[3])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[4], menuXJ[3], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaXJ[3] * (Int(jumlahBeli) ?? 0)
             
@@ -800,16 +1183,32 @@ func xiangJia(){
               How many \(menuXJ[4]) do you want to buy?
               """, terminator: " ")
         jumlahBeli = readLine()!
+        if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
+                    print("\nYou can only input number\n")
+                    xiangJia()
+        }
         
-        if((Int(jumlahBeli) ?? 0) <= 0 || jumlahBeli == ""){
+        if((Int(jumlahBeli) ?? 0) <= 0){
             print()
             xiangJia()
         }
         else{
             print("Thankyou for ordering.\n")
             
-            cart.append("\(menuXJ[4]) x\(jumlahBeli)")
-            cartCafe.append("Xiang Jia")
+        var double: Bool = false
+            var indexcart = 0
+            for (index, scart) in cart.enumerated(){
+                if(scart.1.contains("\(menuXJ[4])")){
+                    double = true
+                    indexcart = index
+                }
+            }
+            if double{
+                cart[indexcart].2 += Int(jumlahBeli) ?? 0
+            }
+            else{
+                cart.append((cafeteria[4], menuXJ[4], Int(jumlahBeli) ?? 0))
+            }
             
             harga = hargaXJ[4] * (Int(jumlahBeli) ?? 0)
             
@@ -822,7 +1221,7 @@ func xiangJia(){
         mainScreen()
         
     default :
-        kopte()
+        xiangJia()
     }
 }
 
@@ -838,10 +1237,17 @@ func cartScreen(){
         mainScreen()
     }
     else{
-        for(index, scart) in cartCafe.enumerated(){
-            print("Your order from \(scart) :")
-            print("- \(cart[index])")
+        for cafe in cafeteria{
+            if cart.contains(where: {$0.0 == cafe}){
+                print("Your order from \(cafe) :")
+            }
+            for scart in cart{
+                if scart.0 == cafe {
+                    print("- \(scart.1) x\(scart.2)")
+                }
+            }
         }
+    }
         print("""
               
               Press [B] to go back
@@ -863,7 +1269,7 @@ func cartScreen(){
             cartScreen()
         }
     }
-}
+
 
 func checkoutScreen(){
     print("""
@@ -900,7 +1306,6 @@ func checkoutScreen(){
                     change = mon - payment
                     
                     cart = []
-                    cartCafe = []
                     payment = 0
                     
                     print("""
