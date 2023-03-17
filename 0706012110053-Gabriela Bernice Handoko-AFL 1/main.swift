@@ -107,8 +107,8 @@ func tukuTuku(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    tukuTuku()
+            print("\nYou can only input number\n")
+            tukuTuku()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -118,7 +118,7 @@ func tukuTuku(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuTuku[0])")){
@@ -147,8 +147,8 @@ func tukuTuku(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    tukuTuku()
+            print("\nYou can only input number\n")
+            tukuTuku()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -158,7 +158,7 @@ func tukuTuku(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuTuku[1])")){
@@ -187,8 +187,8 @@ func tukuTuku(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    tukuTuku()
+            print("\nYou can only input number\n")
+            tukuTuku()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -198,7 +198,7 @@ func tukuTuku(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuTuku[2])")){
@@ -227,8 +227,8 @@ func tukuTuku(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    tukuTuku()
+            print("\nYou can only input number\n")
+            tukuTuku()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -238,7 +238,7 @@ func tukuTuku(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuTuku[3])")){
@@ -267,8 +267,8 @@ func tukuTuku(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    tukuTuku()
+            print("\nYou can only input number\n")
+            tukuTuku()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -278,7 +278,7 @@ func tukuTuku(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuTuku[4])")){
@@ -337,8 +337,8 @@ func gotri(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    gotri()
+            print("\nYou can only input number\n")
+            gotri()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -348,7 +348,7 @@ func gotri(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuGotri[0])")){
@@ -377,8 +377,8 @@ func gotri(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    gotri()
+            print("\nYou can only input number\n")
+            gotri()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -388,7 +388,7 @@ func gotri(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuGotri[1])")){
@@ -417,8 +417,8 @@ func gotri(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    gotri()
+            print("\nYou can only input number\n")
+            gotri()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -428,7 +428,7 @@ func gotri(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuGotri[2])")){
@@ -457,8 +457,8 @@ func gotri(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    gotri()
+            print("\nYou can only input number\n")
+            gotri()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -468,7 +468,7 @@ func gotri(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuGotri[3])")){
@@ -497,8 +497,8 @@ func gotri(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    gotri()
+            print("\nYou can only input number\n")
+            gotri()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -508,7 +508,7 @@ func gotri(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuGotri[4])")){
@@ -566,8 +566,8 @@ func madamLie(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    madamLie()
+            print("\nYou can only input number\n")
+            madamLie()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -577,7 +577,7 @@ func madamLie(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuMadam[0])")){
@@ -606,8 +606,8 @@ func madamLie(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    madamLie()
+            print("\nYou can only input number\n")
+            madamLie()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -617,7 +617,7 @@ func madamLie(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuMadam[1])")){
@@ -646,8 +646,8 @@ func madamLie(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    madamLie()
+            print("\nYou can only input number\n")
+            madamLie()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -657,7 +657,7 @@ func madamLie(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuMadam[2])")){
@@ -686,8 +686,8 @@ func madamLie(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    madamLie()
+            print("\nYou can only input number\n")
+            madamLie()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -697,7 +697,7 @@ func madamLie(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuMadam[3])")){
@@ -726,8 +726,8 @@ func madamLie(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    madamLie()
+            print("\nYou can only input number\n")
+            madamLie()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -737,7 +737,7 @@ func madamLie(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuMadam[4])")){
@@ -795,8 +795,8 @@ func kopte(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    kopte()
+            print("\nYou can only input number\n")
+            kopte()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -806,7 +806,7 @@ func kopte(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuKopte[0])")){
@@ -835,8 +835,8 @@ func kopte(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    kopte()
+            print("\nYou can only input number\n")
+            kopte()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -846,7 +846,7 @@ func kopte(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuKopte[1])")){
@@ -875,8 +875,8 @@ func kopte(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    kopte()
+            print("\nYou can only input number\n")
+            kopte()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -886,7 +886,7 @@ func kopte(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuKopte[2])")){
@@ -915,8 +915,8 @@ func kopte(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    kopte()
+            print("\nYou can only input number\n")
+            kopte()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -926,7 +926,7 @@ func kopte(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuKopte[3])")){
@@ -955,8 +955,8 @@ func kopte(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    kopte()
+            print("\nYou can only input number\n")
+            kopte()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -966,7 +966,7 @@ func kopte(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuKopte[4])")){
@@ -1024,8 +1024,8 @@ func xiangJia(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    xiangJia()
+            print("\nYou can only input number\n")
+            xiangJia()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -1035,7 +1035,7 @@ func xiangJia(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuXJ[0])")){
@@ -1064,8 +1064,8 @@ func xiangJia(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    xiangJia()
+            print("\nYou can only input number\n")
+            xiangJia()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -1075,7 +1075,7 @@ func xiangJia(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuXJ[1])")){
@@ -1104,8 +1104,8 @@ func xiangJia(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    xiangJia()
+            print("\nYou can only input number\n")
+            xiangJia()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -1115,7 +1115,7 @@ func xiangJia(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuXJ[2])")){
@@ -1144,8 +1144,8 @@ func xiangJia(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    xiangJia()
+            print("\nYou can only input number\n")
+            xiangJia()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -1155,7 +1155,7 @@ func xiangJia(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuXJ[3])")){
@@ -1184,8 +1184,8 @@ func xiangJia(){
               """, terminator: " ")
         jumlahBeli = readLine()!
         if !(jumlahBeli.range(of: #"^\d+$"#, options: .regularExpression) != nil) {
-                    print("\nYou can only input number\n")
-                    xiangJia()
+            print("\nYou can only input number\n")
+            xiangJia()
         }
         
         if((Int(jumlahBeli) ?? 0) <= 0){
@@ -1195,7 +1195,7 @@ func xiangJia(){
         else{
             print("Thankyou for ordering.\n")
             
-        var double: Bool = false
+            var double: Bool = false
             var indexcart = 0
             for (index, scart) in cart.enumerated(){
                 if(scart.1.contains("\(menuXJ[4])")){
@@ -1248,27 +1248,27 @@ func cartScreen(){
             }
         }
     }
-        print("""
+    print("""
               
               Press [B] to go back
               Press [P] to pay / checkout
               Your choice?
               """, terminator: " ")
-        inputCart = readLine()!.lowercased()
+    inputCart = readLine()!.lowercased()
+    
+    print()
+    
+    switch inputCart{
+    case "b" :
+        mainScreen()
         
-        print()
+    case "p" :
+        checkoutScreen()
         
-        switch inputCart{
-        case "b" :
-            mainScreen()
-            
-        case "p" :
-            checkoutScreen()
-            
-        default :
-            cartScreen()
-        }
+    default :
+        cartScreen()
     }
+}
 
 
 func checkoutScreen(){
@@ -1336,97 +1336,3 @@ func checkoutScreen(){
 }
 
 mainScreen()
-
-//var mainChoice = "0"
-//var menuTuku: String = "0"
-//
-//repeat{
-//    print("""
-//      Welcome to UC-Walk Cafeteria 👨🏻‍🍳👩🏻‍🍳
-//      Please choose cafeteria:
-//
-//      [1] Tuku-Tuku
-//      [2] Gotri
-//      [3] Madam Lie
-//      [4] Kopte
-//      [5] Gisoe Coffee
-//      -
-//      [S]hopping cart
-//      [Q]uit
-//      Your cafeteria choice?
-//      """)
-//
-//    var mainChoice = readLine()
-//
-//    print()
-//
-//    if(mainChoice == "1"){
-//        var menuChoice = "0"
-//        var check = true
-//        repeat{
-//            print("""
-//              Hi, welcome back to Tuku-Tuku!
-//              What would you like to order?
-//
-//              [1] Tahu isi
-//              [2] Nasi kuning
-//              [3] Nasi campur
-//              [4] Air mineral
-//              [5] Popmie goreng
-//              -
-//              [B]ack to Main Menu
-//              Your menu choice?
-//              """)
-//            let menuChoice = readLine()
-//
-//            print()
-//
-//            if(menuChoice == "1"){
-//                repeat{
-//                    print("""
-//                      Tahu isi @ 5.000
-//                      How many tahu isi do you want to buy?
-//                      """)
-//                    var menuTuku = readLine()
-//                }
-//                while menuTuku == "0" || menuTuku == "1" || menuTuku == "2" || menuTuku != "3" || menuTuku != "4" || menuTuku != "5"
-//                print("Thankyou for ordering.\n")
-//            }
-//            else if(menuChoice == "2"){
-//                print("dua")
-//            }
-//            else if(menuChoice == "3"){
-//                print("tiga")
-//            }
-//            else if(menuChoice == "4"){
-//                print("empat")
-//            }
-//            else if(menuChoice == "5"){
-//                print("lima")
-//            }
-//            else if(menuChoice == "b" || menuChoice == "B"){
-//                check = false
-//            }
-//        }
-//        while menuChoice == "0" && check == true
-//    }
-//    else if(mainChoice == "2"){
-//        print("dua")
-//    }
-//    else if(mainChoice == "3"){
-//        print("tiga")
-//    }
-//    else if(mainChoice == "4"){
-//        print("empat")
-//    }
-//    else if(mainChoice == "5"){
-//        print("lima")
-//    }
-//    else if(mainChoice == "s" || mainChoice == "S"){
-//        print("huruf s apa S")
-//    }
-//    else if(mainChoice == "q" || mainChoice == "Q"){
-//        exit(0)
-//    }
-//}
-//while mainChoice == "0"
