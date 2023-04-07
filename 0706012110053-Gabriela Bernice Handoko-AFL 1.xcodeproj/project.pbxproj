@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		04898E0D29AD9E1F0022FE52 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04898E0C29AD9E1F0022FE52 /* main.swift */; };
+		04B23F1A29D54C0C000275B8 /* Cafeteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B23F1929D54C0C000275B8 /* Cafeteria.swift */; };
+		04B23F1C29D54C15000275B8 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B23F1B29D54C15000275B8 /* Menu.swift */; };
+		04B23F1E29D54C1A000275B8 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B23F1D29D54C1A000275B8 /* Food.swift */; };
+		04B23F2029D54C22000275B8 /* Beverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B23F1F29D54C22000275B8 /* Beverage.swift */; };
+		04B23F2429D54C31000275B8 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B23F2329D54C31000275B8 /* ShoppingCart.swift */; };
+		04B23F2629D54C38000275B8 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B23F2529D54C38000275B8 /* Payment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +31,12 @@
 /* Begin PBXFileReference section */
 		04898E0929AD9E1F0022FE52 /* 0706012110053-Gabriela Bernice Handoko-AFL 1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "0706012110053-Gabriela Bernice Handoko-AFL 1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04898E0C29AD9E1F0022FE52 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		04B23F1929D54C0C000275B8 /* Cafeteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafeteria.swift; sourceTree = "<group>"; };
+		04B23F1B29D54C15000275B8 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		04B23F1D29D54C1A000275B8 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		04B23F1F29D54C22000275B8 /* Beverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beverage.swift; sourceTree = "<group>"; };
+		04B23F2329D54C31000275B8 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		04B23F2529D54C38000275B8 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,12 @@
 			isa = PBXGroup;
 			children = (
 				04898E0C29AD9E1F0022FE52 /* main.swift */,
+				04B23F1F29D54C22000275B8 /* Beverage.swift */,
+				04B23F1929D54C0C000275B8 /* Cafeteria.swift */,
+				04B23F1D29D54C1A000275B8 /* Food.swift */,
+				04B23F1B29D54C15000275B8 /* Menu.swift */,
+				04B23F2529D54C38000275B8 /* Payment.swift */,
+				04B23F2329D54C31000275B8 /* ShoppingCart.swift */,
 			);
 			path = "0706012110053-Gabriela Bernice Handoko-AFL 1";
 			sourceTree = "<group>";
@@ -120,7 +138,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B23F2029D54C22000275B8 /* Beverage.swift in Sources */,
+				04B23F1C29D54C15000275B8 /* Menu.swift in Sources */,
+				04B23F1E29D54C1A000275B8 /* Food.swift in Sources */,
+				04B23F1A29D54C0C000275B8 /* Cafeteria.swift in Sources */,
 				04898E0D29AD9E1F0022FE52 /* main.swift in Sources */,
+				04B23F2629D54C38000275B8 /* Payment.swift in Sources */,
+				04B23F2429D54C31000275B8 /* ShoppingCart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
